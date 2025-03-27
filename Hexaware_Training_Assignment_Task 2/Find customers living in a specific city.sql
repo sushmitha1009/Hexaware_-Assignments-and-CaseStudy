@@ -1,1 +1,0 @@
-SELECT * FROM Customers WHERE address LIKE '%303 Cedar Lane%';
