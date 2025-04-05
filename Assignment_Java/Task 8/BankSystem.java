@@ -1,6 +1,6 @@
-package Bank;
+package main;
 import java.util.*;
-public class BankSystem {
+public class Bank {
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
         Account account=null;
