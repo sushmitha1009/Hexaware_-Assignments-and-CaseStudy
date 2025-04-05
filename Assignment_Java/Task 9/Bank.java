@@ -1,5 +1,9 @@
 package main;
 
+import entity.BankAccount;
+import entity.CurrentAccount;
+import entity.SavingsAccount;
+
 import java.util.*;
 
 public class Bank {
