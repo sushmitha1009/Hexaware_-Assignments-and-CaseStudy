@@ -1,4 +1,4 @@
-package Bank;
+package entity;
 
 public class Customer {
     private int customerId;
