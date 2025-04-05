@@ -1,4 +1,4 @@
-package Bank;
+package entity;
 
 public class CurrentAccount extends BankAccount{
     private static final double OVERDRAFT_LIMIT=5000.00;
