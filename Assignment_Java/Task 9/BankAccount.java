@@ -1,4 +1,4 @@
-package Bank;
+package entity;
 
 public abstract class BankAccount {
     protected int accountNumber;
