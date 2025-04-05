@@ -1,4 +1,4 @@
-package Bank;
+package entity;
 
 public class SavingsAccount extends Account {
     private static final float INTEREST_RATE=4.5f;
