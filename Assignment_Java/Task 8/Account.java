@@ -1,4 +1,4 @@
-package Bank;
+package entity;
 public class Account {
     private int accountNumber;
     private String accountType;
