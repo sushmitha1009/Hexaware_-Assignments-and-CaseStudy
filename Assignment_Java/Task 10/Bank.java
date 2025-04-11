@@ -11,13 +11,15 @@ public class Bank {
     // Create a new account (no need to pass accNo)
     public void create_account(Customer customer, String accType, float balance) {
         Account account = new Account(accType, balance, customer);
-        accounts.put(account.getAccountNumber(), account); // use auto-generated accNo
+        accounts.put(Long.valueOf(account.getAccountNumber()), account); // Explicit boxing
         System.out.println("Account created successfully! Account Number: " + account.getAccountNumber());
     }
 
+
+
     // Get account balance
     public float get_account_balance(long account_number) {
-        Account account = accounts.get(account_number);
+        Account account = accounts.get(Long.valueOf(account_number)); // Explicit boxing
         if (account != null) {
             return account.getAccountBalance();
         } else {
@@ -28,7 +30,8 @@ public class Bank {
 
     // Deposit amount
     public float deposit(long account_number, float amount) {
-        Account account = accounts.get(account_number);
+        // Explicitly convert the long to Long
+        Account account = accounts.get(Long.valueOf(account_number));
         if (account != null) {
             account.deposit(amount);
             return account.getAccountBalance();
@@ -38,9 +41,11 @@ public class Bank {
         }
     }
 
+
     // Withdraw amount
     public float withdraw(long account_number, float amount) {
-        Account account = accounts.get(account_number);
+        // Convert the long to Long explicitly
+        Account account = accounts.get(Long.valueOf(account_number));
         if (account != null) {
             if (account.withdraw(amount)) {
                 return account.getAccountBalance();
@@ -54,10 +59,12 @@ public class Bank {
         }
     }
 
+
     // Transfer money from one account to another
     public void transfer(long from_account_number, long to_account_number, float amount) {
-        Account from = accounts.get(from_account_number);
-        Account to = accounts.get(to_account_number);
+        // Convert long to Long for compatibility with the map
+        Account from = accounts.get(Long.valueOf(from_account_number));
+        Account to = accounts.get(Long.valueOf(to_account_number));
 
         if (from != null && to != null) {
             if (from.withdraw(amount)) {
@@ -71,13 +78,15 @@ public class Bank {
         }
     }
 
+
     // Print account + customer details
     public void getAccountDetails(long account_number) {
-        Account account = accounts.get(account_number);
+        // Convert long to Long for compatibility with the map
+        Account account = accounts.get(Long.valueOf(account_number));
         if (account != null) {
             account.printAccountDetails();
         } else {
             System.out.println("Account not found.");
         }
     }
-}
+
